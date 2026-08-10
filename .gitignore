@@ -1,4 +1,14 @@
+# 数据与缓存
 data/
+output/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Jupyter 临时文件
+*.ipynb
+jupyter.log
+
+# 系统文件
+Thumbs.db
+.DS_Store

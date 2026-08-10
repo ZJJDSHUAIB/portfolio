@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品一 · PUBG 玩家行为与价值分层分析</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html">首页</a>
+  <a href="pubg.html" class="active">作品一 · PUBG 玩家分层</a>
+  <a href="olist.html">作品二 · 电商生命周期</a>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1>作品一 · PUBG 玩家对局行为与价值分层分析</h1>
+    <p>作为数据运营,回答:谁是我们的高价值玩家?他们的行为特征是什么?如何识别和培养?</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- KPI 概览 -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="value">444万</div><div class="label">玩家对局记录</div></div>
+    <div class="kpi"><div class="value">175万</div><div class="label">四排模式数据</div></div>
+    <div class="kpi"><div class="value">5类</div><div class="label">玩家分层模型</div></div>
+    <div class="kpi"><div class="value">56.8%</div><div class="label">一局0击杀玩家</div></div>
+  </div>
+
+  <!-- ① 项目背景 -->
+  <section class="chart-card">
+    <h2>① 项目背景</h2>
+    <p>玩家分层是游戏运营的核心动作。本作品用 PUBG 玩家对局行为数据,回答三个运营问题:</p>
+    <ul style="margin-left:20px;">
+      <li><strong>谁是我们的高价值玩家?</strong> —— 建立玩家价值分层模型</li>
+      <li><strong>他们的行为特征是什么?</strong> —— 找出区分层的关键行为指标</li>
+      <li><strong>如何识别和培养?</strong> —— 输出可落地的运营方案</li>
+    </ul>
+  </section>
+
+  <!-- ② 数据与方法 -->
+  <section class="chart-card">
+    <h2>② 数据与方法</h2>
+    <p><strong>数据源</strong>:Kaggle PUBG 官方比赛数据,444 万条玩家对局行为记录,29 个字段。</p>
+    <p><strong>聚焦策略</strong>:全量清洗后聚焦 <strong>四排第一人称</strong>(占全量 39.8%,最主流模式,最有代表性)。</p>
+    <table class="data-table">
+      <tr><th>分析维度</th><th>使用的关键字段</th><th>业务含义</th></tr>
+      <tr><td>战斗能力</td><td>造成伤害 / 击杀数</td><td>玩家"投入"与"潜力"</td></tr>
+      <tr><td>生存能力</td><td>完赛名次 / 步行距离</td><td>玩家"存活"与"留存"</td></tr>
+      <tr><td>资源行为</td><td>捡武器数 / 能量道具</td><td>玩家的"成长空间"</td></tr>
+    </table>
+  </section>
+
+  <!-- ③ 关键发现:幂律分布 -->
+  <section class="chart-card">
+    <h2>③ 关键发现:击杀数的"幂律分布"</h2>
+    <p>玩家击杀数呈典型的 <strong>长尾分布</strong> —— <span class="highlight">56.8% 的玩家一局 0 击杀</span>,极少数高手贡献绝大部分击杀。</p>
+    <img src="../assets/01_kill_distribution.png" alt="击杀数分布">
+    <div class="action-plan">
+      <div class="plan-title">运营洞察</div>
+      <ul>
+        <li><strong>多数玩家不是高手</strong> —— 运营要服务的重点,是占 56.8% 的"0 击杀"群体,而非少数高手</li>
+        <li>击杀数是"结果",不能只看它 —— 用"伤害"更能提前发现"有投入但没结果"的潜力玩家</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ④ 玩家价值分层 -->
+  <section class="chart-card">
+    <h2>④ 玩家价值分层模型</h2>
+    <p>用 <strong>战斗维度(造成伤害)</strong> × <strong>生存维度(完赛名次)</strong> 交叉,建立 5 类玩家分层。为什么用"伤害"而非"击杀"?——击杀是结果,伤害是投入,用投入更能提前识别"有潜力但没结果"的玩家。</p>
+    <img src="../assets/02_segment_share.png" alt="玩家分层占比">
+    <table class="data-table">
+      <tr><th>玩家分层</th><th>占比</th><th>画像</th></tr>
+      <tr><td>核心高手(全能)</td><td>17.9%</td><td>高伤害 + 高存活,顶尖玩家</td></tr>
+      <tr><td>潜力型(成长中)</td><td>57.1%</td><td>中坚主体,有成长空间</td></tr>
+      <tr><td>战斗型(有天赋但存活差)</td><td>3.6%</td><td>高伤害但存活差,有潜力但莽</td></tr>
+      <tr><td>生存型(苟活无输出)</td><td>6.8%</td><td>在线久但无输出,苟活玩家</td></tr>
+      <tr><td>双弱型(流失风险)</td><td>14.6%</td><td>0伤害 + 存活差,最需挽留</td></tr>
+    </table>
+  </section>
+
+  <!-- ⑤ 分层验证 -->
+  <section class="chart-card">
+    <h2>⑤ 分层验证:每类玩家特征是否"名副其实"</h2>
+    <p>验证每类的核心指标是否符合预期画像,确保分层稳健。</p>
+    <img src="../assets/03_segment_features.png" alt="分层特征对比">
+    <table class="data-table">
+      <tr><th>玩家分层</th><th>造成伤害</th><th>完赛名次</th><th>步行距离</th><th>击杀数</th><th>捡武器数</th></tr>
+      <tr><td>双弱型</td><td>0</td><td>0.1</td><td>81.5</td><td>0</td><td>1.0</td></tr>
+      <tr><td>战斗型</td><td>239</td><td>0.2</td><td>198</td><td>2</td><td>2.0</td></tr>
+      <tr><td>潜力型</td><td>88.9</td><td>0.4</td><td>619</td><td>0</td><td>3.0</td></tr>
+      <tr><td>生存型</td><td>0</td><td>0.7</td><td>1796</td><td>0</td><td>4.0</td></tr>
+      <tr><td>核心高手</td><td>329</td><td>0.8</td><td>2560</td><td>3</td><td>5.0</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">验证结论</div>
+      <ul>
+        <li><strong>步行距离</strong> 完美区分各层:核心高手 2560m vs 双弱型 81m —— 验证"步行距离=生存能力"</li>
+        <li><strong>造成伤害</strong> 区分战斗能力:核心高手 329 vs 双弱型 0 —— 验证"伤害=战斗投入"</li>
+        <li>每类玩家特征鲜明、无重叠,分层模型稳健</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑥ 深度洞察:落地成盒 -->
+  <section class="chart-card">
+    <h2>⑥ 深度洞察:"落地成盒"的流失风险群体</h2>
+    <p>审计发现 <span class="highlight">5.9% 的玩家完赛名次 = 0</span>。这不是异常数据,而是真实的"落地成盒"信号:</p>
+    <table class="data-table">
+      <tr><th>指标</th><th>数值</th><th>解读</th></tr>
+      <tr><td>平均步行距离</td><td>45 米</td><td>开局落地后几乎没动就死了</td></tr>
+      <tr><td>平均对局时长</td><td>1560 秒</td><td>整局26分钟,但他们只活了最初1分钟</td></tr>
+      <tr><td>平均击杀</td><td>0.1</td><td>连枪都没摸到</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">运营洞察</div>
+      <p>这批玩家游戏体验极差(落地秒死、无正反馈),<strong>是最容易流失的群体</strong>。他们是"双弱型"的极端代表,运营应重点介入。</p>
+    </div>
+  </section>
+
+  <!-- ⑦ 运营落地方案 -->
+  <section class="chart-card">
+    <h2>⑦ 运营落地方案</h2>
+    <p>基于数据洞察,为每类玩家设计差异化的运营策略。</p>
+
+    <div class="action-plan">
+      <div class="plan-title">双弱型(流失风险)14.6% —— 新手保护</div>
+      <ul>
+        <li><strong>新手保护匹配</strong>:前几局安排 AI/人机,给首次击杀的正反馈</li>
+        <li><strong>落地引导</strong>:新手教学提示跳野外人少区域,避免热门点被秒</li>
+        <li><strong>战斗教学</strong>:靶场/训练场,建立战斗自信</li>
+        <li><strong>匹配优化</strong>:让落地成盒玩家匹配水平相近者</li>
+      </ul>
+    </div>
+
+    <div class="action-plan">
+      <div class="plan-title">生存型(苟活无输出)6.8% —— 激励参与战斗</div>
+      <ul>
+        <li><strong>战斗任务激励</strong>:战斗任务、伤害成就奖励</li>
+        <li><strong>伤害统计展示</strong>:让玩家看到自己的战斗贡献</li>
+        <li><strong>资源收集引导</strong>:把"苟"转化为"积累"的成就感</li>
+      </ul>
+    </div>
+
+    <div class="action-plan">
+      <div class="plan-title">战斗型(有天赋但存活差)3.6% —— 潜力引导</div>
+      <ul>
+        <li><strong>跑圈教学</strong>:提示占点时机、毒圈推进节奏</li>
+        <li><strong>生存技巧引导</strong>:让战斗天赋转化为名次</li>
+        <li><strong>潜力识别</strong>:标记为"高潜力玩家"重点培养</li>
+      </ul>
+    </div>
+
+    <div class="action-plan">
+      <div class="plan-title">潜力型(成长中)57.1% —— 保持活跃</div>
+      <ul>
+        <li><strong>常规活跃活动</strong>:保持在线粘性</li>
+        <li><strong>成长激励</strong>:段位晋升、累计击杀里程碑</li>
+      </ul>
+    </div>
+
+    <div class="action-plan">
+      <div class="plan-title">核心高手(全能)17.9% —— 竞技与内容</div>
+      <ul>
+        <li><strong>竞技激励</strong>:段位/天梯、大神身份标识</li>
+        <li><strong>内容产出</strong>:邀请做教学/直播/攻略</li>
+        <li><strong>社区 KOL 培养</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑧ 方法总结 -->
+  <section class="chart-card">
+    <h2>⑧ 分析闭环总结</h2>
+    <p>本作品完整走通了数据运营的分析闭环:</p>
+    <div class="method-step">
+      <div class="step-num">1</div>
+      <div class="step-body"><h4>读数据 + 清洗</h4><p>处理异常值、统一列名,从 444 万行聚焦到 175 万行四排数据</p></div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">2</div>
+      <div class="step-body"><h4>洞察分布</h4><p>发现击杀数幂律分布、名次均匀分布</p></div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">3</div>
+      <div class="step-body"><h4>建立分层</h4><p>用伤害×名次双维度建立 5 类玩家模型</p></div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">4</div>
+      <div class="step-body"><h4>验证与审计</h4><p>验证每类特征,发现"落地成盒"流失风险群体</p></div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">5</div>
+      <div class="step-body"><h4>输出方案</h4><p>每类玩家给差异化运营策略,数据支撑每条动作</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>张君杰 · 数据运营作品集 · 作品一 · 数据源:Kaggle PUBG</footer>
+
+</body>
+</html>
