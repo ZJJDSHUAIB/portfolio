@@ -69,6 +69,20 @@
     </div>
   </section>
 
+  <!-- ③.5 关键代码:幂律分布验证 -->
+  <section class="chart-card">
+    <h2>③ 附:关键分析代码 —— 幂律分布验证</h2>
+    <pre class="code-block"><span class="cm"># 击杀数分布:验证"幂律分布"假设</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+<span class="fn">kill_dist</span> = 四排[<span class="str">'击杀数'</span>].value_counts().sort_index()
+零杀占比 = (四排[<span class="str">'击杀数'</span>] == <span class="num">0</span>).mean()
+<span class="fn">print</span>(<span class="str">f"0 击杀玩家占比: {零杀占比:.1%}"</span>)
+<span class="cm"># 输出: 0 击杀玩家占比: 56.8%</span>
+<span class="cm"># → 超过一半玩家一局 0 杀, 呈典型幂律分布(长尾)</span></pre>
+    <div class="code-block-title">核心代码片段 · 完整脚本见 GitHub</div>
+  </section>
+
   <!-- ④ 玩家价值分层 -->
   <section class="chart-card">
     <h2>④ 玩家价值分层模型</h2>
@@ -82,6 +96,21 @@
       <tr><td>生存型(苟活无输出)</td><td>6.8%</td><td>在线久但无输出,苟活玩家</td></tr>
       <tr><td>双弱型(流失风险)</td><td>14.6%</td><td>0伤害 + 存活差,最需挽留</td></tr>
     </table>
+    <pre class="code-block"><span class="cm"># 玩家价值分层:战斗维度(伤害) × 生存维度(名次)</span>
+<span class="cm"># 用"伤害"而非"击杀",因为伤害是投入,更能提前识别有潜力但没结果的人</span>
+高伤害 = 四排[<span class="str">'造成伤害'</span>] >= 四排[<span class="str">'造成伤害'</span>].quantile(<span class="num">0.75</span>)
+零伤害 = 四排[<span class="str">'造成伤害'</span>] == <span class="num">0</span>
+高名次 = 四排[<span class="str">'完赛名次'</span>] >= <span class="num">0.5</span>
+低名次 = 四排[<span class="str">'完赛名次'</span>] &lt; <span class="num">0.3</span>
+
+四排[<span class="str">'最终分层'</span>] = <span class="str">'潜力型(成长中)'</span>
+四排.loc[高伤害 &amp; 高名次, <span class="str">'最终分层'</span>] = <span class="str">'核心高手(全能)'</span>
+四排.loc[高伤害 &amp; 低名次, <span class="str">'最终分层'</span>] = <span class="str">'战斗型(有天赋但存活差)'</span>
+四排.loc[零伤害 &amp; 高名次, <span class="str">'最终分层'</span>] = <span class="str">'生存型(苟活无输出)'</span>
+四排.loc[零伤害 &amp; 低名次, <span class="str">'最终分层'</span>] = <span class="str">'双弱型(流失风险)'</span>
+
+<span class="fn">print</span>(四排[<span class="str">'最终分层'</span>].value_counts(normalize=<span class="kw">True</span>).round(<span class="num">3</span>))</pre>
+    <div class="code-block-title">核心代码片段 · 分层模型逻辑</div>
   </section>
 
   <!-- ⑤ 分层验证 -->
@@ -121,6 +150,14 @@
       <div class="plan-title">运营洞察</div>
       <p>这批玩家游戏体验极差(落地秒死、无正反馈),<strong>是最容易流失的群体</strong>。他们是"双弱型"的极端代表,运营应重点介入。</p>
     </div>
+    <pre class="code-block"><span class="cm"># 数据审计:名次=0 是异常数据还是真实信号?</span>
+<span class="cm"># 用"真实存活痕迹"(步行距离)判断,而非只看名次字段</span>
+零名次 = 四排[四排[<span class="str">'完赛名次'</span>] == <span class="num">0</span>]
+<span class="fn">print</span>(<span class="str">f"名次=0 玩家: {len(零名次):,} 人"</span>)
+<span class="fn">print</span>(<span class="str">f"  平均步行距离: {零名次['步行距离'].mean():.0f} 米"</span>)  <span class="cm"># 45米 → 落地即死</span>
+<span class="fn">print</span>(<span class="str">f"  平均对局时长: {零名次['对局时长(秒)'].mean():.0f} 秒"</span>)  <span class="cm"># 1560秒 → 整局时长</span>
+<span class="cm"># → 步行45米=开局落地即死, 是真实的"落地成盒"群体, 非异常数据</span></pre>
+    <div class="code-block-title">核心代码片段 · 数据审计逻辑</div>
   </section>
 
   <!-- ⑦ 运营落地方案 -->

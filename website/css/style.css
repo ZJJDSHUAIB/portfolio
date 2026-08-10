@@ -160,6 +160,30 @@ header.hero {
 .method-step .step-body h4 { color: var(--primary); margin-bottom: 4px; }
 .method-step .step-body p { color: #555; font-size: 14px; }
 
+/* 代码块 */
+.code-block {
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin: 14px 0;
+    overflow-x: auto;
+    font-family: "Consolas", "JetBrains Mono", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.code-block .kw { color: #c678dd; }
+.code-block .str { color: #98c379; }
+.code-block .num { color: #d19a66; }
+.code-block .fn { color: #61afef; }
+.code-block .cm { color: #7f848e; font-style: italic; }
+.code-block-title {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    text-align: right;
+}
+
 footer {
     text-align: center;
     padding: 28px;
