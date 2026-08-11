@@ -19,21 +19,21 @@ const DEFAULT_OPTS = {
   color1: '#5B6BFF',   // Halo 靛蓝
   color2: '#3DD7E5',   // Halo info 青
   color3: '#F2F4F8',   // Halo 亮白
-  speed: 0.35,
-  scale: 4,
+  speed: 0.3,
+  scale: 2.5,
   detail: 3,
-  glow: 1.6,
-  coreSize: 0.1,
+  glow: 2.2,
+  coreSize: 0.15,
   swirl: 1,
   fold: -0.2,
-  blackPoint: 0.05,
-  brightness: 1.3,
+  blackPoint: 0.0,
+  brightness: 2.5,
   colorMode: 'molten',
   grain: true,
   grainIntensity: 0.05,
   mouseInteraction: true,
   mouseStrength: 0.3,
-  opacity: 0.9,
+  opacity: 1.0,
 };
 
 export function initMolten() {
@@ -55,9 +55,11 @@ export function initMolten() {
 
     try {
       new MoltenMetal(container, opts);
+      container.dataset.moltenOk = 'true';
     } catch (e) {
       // 降级:CDN 加载失败或 WebGL 不可用,静默失败,保留静态背景
-      console.warn('MoltenMetal 初始化失败,使用静态背景:', e);
+      console.warn('[MoltenMetal] 初始化失败,使用静态背景:', e);
+      container.dataset.moltenError = String(e && e.message ? e.message : e);
       container.classList.add('molten-fallback');
     }
   });
