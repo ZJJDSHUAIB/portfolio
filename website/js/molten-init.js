@@ -40,7 +40,14 @@ export function initMolten() {
   const containers = document.querySelectorAll('.molten-hero');
   if (!containers.length) return;
 
+  // 可见诊断徽标(仅调试用,可删除)
+  const badge = document.createElement('div');
+  badge.id = 'molten-debug';
+  badge.style.cssText = 'position:fixed;bottom:8px;right:8px;z-index:9999;font:11px/1.4 monospace;padding:6px 10px;border-radius:6px;color:#fff;background:rgba(20,21,28,.85);border:1px solid #2A2D38;max-width:320px;white-space:pre-wrap;';
+
   // 每个容器都会初始化一个实例
+  let ok = 0;
+  const errors = [];
   containers.forEach((container) => {
     // 读取 data-molten 上的配置(可覆盖默认)
     const data = container.dataset;
@@ -56,11 +63,23 @@ export function initMolten() {
     try {
       new MoltenMetal(container, opts);
       container.dataset.moltenOk = 'true';
+      ok++;
     } catch (e) {
       // 降级:CDN 加载失败或 WebGL 不可用,静默失败,保留静态背景
       console.warn('[MoltenMetal] 初始化失败,使用静态背景:', e);
-      container.dataset.moltenError = String(e && e.message ? e.message : e);
+      const msg = String(e && e.message ? e.message : e);
+      container.dataset.moltenError = msg;
       container.classList.add('molten-fallback');
+      errors.push(msg);
     }
   });
+
+  // 更新诊断徽标
+  badge.textContent =
+    'MoltenMetal: ' +
+    (ok ? `OK x${ok}` : 'FAILED') +
+    (errors.length ? '\nERROR: ' + errors.join(' | ') : '') +
+    '\nWebGL: ' + (window.WebGLRenderingContext ? 'supported' : 'missing') +
+    '\nogl: ' + (document.querySelector('#molten-debug') ? 'loaded' : '');
+  document.body.appendChild(badge);
 }
