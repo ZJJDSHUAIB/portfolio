@@ -6,40 +6,61 @@
 <title>作品二 · 电商用户生命周期与付费分析</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/system.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <span class="nav-brand">张君杰 · 数据运营作品集</span>
-    <div class="nav-links">
-      <a href="../index.html">首页</a>
-      <a href="pubg.html">作品一 · PUBG 分层</a>
-      <a href="olist.html" class="active">作品二 · 电商生命周期</a>
-    </div>
+<!-- 导航 -->
+<nav class="nav container">
+  <a class="nav-brand" href="../index.html">
+    <span class="nav-brand-mark"></span>
+    张君杰 · 数据运营作品集
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="../index.html">首页</a>
+    <a class="nav-link" href="pubg.html">作品一 · PUBG 分层</a>
+    <a class="nav-link" href="olist.html" aria-current="page">作品二 · 电商生命周期</a>
   </div>
 </nav>
 
+<!-- Hero -->
 <header class="hero">
   <div class="container">
-    <h1>作品二 · 电商用户生命周期与付费分析</h1>
+    <p class="eyebrow" style="margin-bottom:16px;">作品 02 · 通用向</p>
+    <h1>电商用户生命周期与付费分析</h1>
     <p class="subtitle">建立"用户分层 → 生命周期 → 付费价值"通用方法论框架,可迁移到游戏等任何产品。</p>
   </div>
 </header>
 
 <div class="container">
 
-  <!-- KPI 概览 -->
-  <div class="kpi-grid">
-    <div class="kpi"><div class="value">9.9万</div><div class="label">电商订单</div></div>
-    <div class="kpi"><div class="value">4类</div><div class="label">生命周期阶段</div></div>
-    <div class="kpi"><div class="value">RFM</div><div class="label">价值分层方法</div></div>
-    <div class="kpi"><div class="value">5步</div><div class="label">方法论框架</div></div>
+  <!-- KPI: stat-tile -->
+  <div class="grid-4" style="margin:var(--space-8) 0;">
+    <div class="stat-tile" data-tone="info">
+      <div class="stat-head"><span class="stat-eyebrow">电商订单</span></div>
+      <div class="stat-value">9.9万</div>
+      <div class="stat-foot">Olist 订单</div>
+    </div>
+    <div class="stat-tile" data-tone="success">
+      <div class="stat-head"><span class="stat-eyebrow">生命周期阶段</span></div>
+      <div class="stat-value">4类</div>
+      <div class="stat-foot">新客/复购/沉默/流失</div>
+    </div>
+    <div class="stat-tile" data-tone="warning">
+      <div class="stat-head"><span class="stat-eyebrow">价值分层方法</span></div>
+      <div class="stat-value">RFM</div>
+      <div class="stat-foot">金额/频次/近度</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-head"><span class="stat-eyebrow">方法论框架</span></div>
+      <div class="stat-value">5步</div>
+      <div class="stat-foot">可迁移到任何产品</div>
+    </div>
   </div>
 
-  <!-- ① 项目背景 -->
+  <!-- ① 项目背景与定位 -->
   <section class="chart-card">
     <h2>① 项目背景与定位</h2>
     <p>本作品是作品一(游戏向)的<strong>方法论基石</strong>。它的价值不是"分析电商",而是建立一套<strong>通用的用户分析框架</strong>,证明我可以把同样的方法迁移到任何产品——包括游戏。</p>
@@ -108,7 +129,7 @@
     </div>
   </section>
 
-  <!-- ⑤ 下一步 -->
+  <!-- ⑤ 分析进行中 -->
   <section class="chart-card">
     <h2>⑤ 分析进行中</h2>
     <p>本作品的完整数据分析(生命周期分布、RFM 分层图表)正在制作中。框架与方法论已确定,后续将补充:</p>

@@ -6,78 +6,100 @@
 <title>张君杰 · 数据运营作品集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/system.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- 导航 -->
-<nav class="nav">
-  <div class="nav-inner">
-    <span class="nav-brand">张君杰 · 数据运营作品集</span>
-    <div class="nav-links">
-      <a href="index.html" class="active">首页</a>
-      <a href="works/pubg.html">作品一 · PUBG 分层</a>
-      <a href="works/olist.html">作品二 · 电商生命周期</a>
-    </div>
+<!-- 导航(Halo .nav) -->
+<nav class="nav container">
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-mark"></span>
+    张君杰 · 数据运营作品集
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html" aria-current="page">首页</a>
+    <a class="nav-link" href="works/pubg.html">作品一 · PUBG 分层</a>
+    <a class="nav-link" href="works/olist.html">作品二 · 电商生命周期</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <header class="hero">
   <div class="container">
+    <p class="eyebrow" style="margin-bottom:16px;">数据运营 · 数据分析 · 用户分层</p>
     <h1>张君杰</h1>
-    <p class="subtitle">数据运营 · 数据分析 · 用户分层</p>
+    <p class="subtitle">用数据驱动运营决策 —— 从 444 万条玩家行为中识别高价值用户,从 10 万条电商订单中提炼可复用方法论。</p>
     <p class="tagline">安徽建筑大学 <span>·</span> 信息与计算科学 <span>·</span> 2027 届</p>
   </div>
 </header>
 
 <div class="container">
 
-  <!-- KPI 数据条 -->
-  <div class="kpi-grid">
-    <div class="kpi"><div class="value">444万</div><div class="label">游戏行为数据</div></div>
-    <div class="kpi"><div class="value">10万</div><div class="label">电商订单数据</div></div>
-    <div class="kpi"><div class="value">5类</div><div class="label">玩家分层模型</div></div>
-    <div class="kpi"><div class="value">2</div><div class="label">完整作品</div></div>
+  <!-- KPI: stat-tile 签名组件 -->
+  <div class="grid-4" style="margin:var(--space-8) 0;">
+    <div class="stat-tile" data-tone="info">
+      <div class="stat-head">
+        <span class="stat-eyebrow">游戏行为数据</span>
+      </div>
+      <div class="stat-value">444万</div>
+      <div class="stat-foot">条玩家对局记录</div>
+    </div>
+    <div class="stat-tile" data-tone="success">
+      <div class="stat-head">
+        <span class="stat-eyebrow">电商订单数据</span>
+      </div>
+      <div class="stat-value">9.9万</div>
+      <div class="stat-foot">Olist 订单明细</div>
+    </div>
+    <div class="stat-tile" data-tone="warning">
+      <div class="stat-head">
+        <span class="stat-eyebrow">玩家分层模型</span>
+      </div>
+      <div class="stat-value">5类</div>
+      <div class="stat-foot">战斗 × 生存双维度</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-head">
+        <span class="stat-eyebrow">完整作品</span>
+      </div>
+      <div class="stat-value">2</div>
+      <div class="stat-foot">游戏向 + 通用向</div>
+    </div>
   </div>
 
   <!-- 作品网格 -->
-  <section class="chart-card">
-    <h2>作品集</h2>
-    <div class="works-grid">
+  <section>
+    <h2 class="t-headline-md" style="margin:var(--space-8) 0 var(--space-4);">作品集</h2>
+    <div class="grid-2">
 
-      <div class="work-card">
-        <div class="work-header">
-          <div class="work-num">作品 01</div>
-          <h3>PUBG 玩家行为与价值分层</h3>
+      <div class="card card-elevated">
+        <span class="card-eyebrow">作品 01 · 游戏向</span>
+        <h3 class="card-title">PUBG 玩家行为与价值分层</h3>
+        <p class="card-body">用 444 万条玩家对局行为,建立"战斗 × 生存"双维度的 5 类玩家分层模型,发现"落地成盒"流失风险群体,输出差异化运营方案。</p>
+        <div class="row" style="flex-wrap:wrap;gap:var(--space-2);">
+          <span class="chip">数据清洗</span>
+          <span class="chip">分层建模</span>
+          <span class="chip">数据审计</span>
+          <span class="chip" data-tone="info">运营方案</span>
         </div>
-        <div class="work-body">
-          <p>用 444 万条玩家对局行为数据,建立"战斗 × 生存"双维度的 5 类玩家分层模型,发现"落地成盒"流失风险群体,输出差异化运营方案。</p>
-          <div class="work-skills">
-            <span class="skill-tag">数据清洗</span>
-            <span class="skill-tag">分布洞察</span>
-            <span class="skill-tag">分层建模</span>
-            <span class="skill-tag">数据审计</span>
-            <span class="skill-tag">运营方案</span>
-          </div>
-          <a class="work-link" href="works/pubg.html">查看作品</a>
+        <div class="card-footer">
+          <a class="btn btn-primary" href="works/pubg.html">查看作品</a>
         </div>
       </div>
 
-      <div class="work-card">
-        <div class="work-header">
-          <div class="work-num">作品 02</div>
-          <h3>电商用户生命周期与付费分析</h3>
+      <div class="card card-elevated">
+        <span class="card-eyebrow">作品 02 · 通用向</span>
+        <h3 class="card-title">电商用户生命周期与付费分析</h3>
+        <p class="card-body">用 Olist 电商数据建立"用户分层 → 生命周期 → 付费价值"方法论框架,可迁移到游戏等任何产品,展示通用的用户分析能力。</p>
+        <div class="row" style="flex-wrap:wrap;gap:var(--space-2);">
+          <span class="chip">用户生命周期</span>
+          <span class="chip" data-tone="success">RFM 分层</span>
+          <span class="chip" data-tone="warning">方法论输出</span>
         </div>
-        <div class="work-body">
-          <p>用 Olist 电商数据建立"用户分层 → 生命周期 → 付费价值"方法论框架,可迁移到游戏等任何产品,展示通用的用户分析能力。</p>
-          <div class="work-skills">
-            <span class="skill-tag">用户生命周期</span>
-            <span class="skill-tag">RFM 分层</span>
-            <span class="skill-tag">方法论输出</span>
-          </div>
-          <a class="work-link" href="works/olist.html">查看作品</a>
+        <div class="card-footer">
+          <a class="btn btn-primary" href="works/olist.html">查看作品</a>
         </div>
       </div>
 
@@ -85,12 +107,16 @@
   </section>
 
   <!-- 关于我 -->
-  <section class="chart-card">
-    <h2>关于我</h2>
-    <p><strong>教育背景</strong> · 安徽建筑大学 · 信息与计算科学(2023-2027)</p>
-    <p>主修概率论与数理统计、运筹学、数学建模、数据分析、Python 程序设计</p>
-    <p class="mt"><strong>实践经历</strong> · SaaS 产品销售实习(客户分层与 ROI 测算)· 校学生会外联(活动策划与资源协调)</p>
-    <p class="mt"><strong>工具技能</strong> · Python(pandas/numpy/seaborn)· Excel(数据透视/VLOOKUP)· Jupyter · 数学建模</p>
+  <section style="margin:var(--space-8) 0;">
+    <h2 class="t-headline-md" style="margin-bottom:var(--space-4);">关于我</h2>
+    <div class="card">
+      <p class="card-body"><strong class="t-primary">教育背景</strong> · 安徽建筑大学 · 信息与计算科学(2023-2027)</p>
+      <p class="card-body">主修概率论与数理统计、运筹学、数学建模、数据分析、Python 程序设计</p>
+      <div class="divider"></div>
+      <p class="card-body"><strong class="t-primary">实践经历</strong> · SaaS 产品销售实习(客户分层与 ROI 测算)· 校学生会外联(活动策划与资源协调)</p>
+      <div class="divider"></div>
+      <p class="card-body"><strong class="t-primary">工具技能</strong> · Python(pandas/numpy/seaborn)· Excel(数据透视/VLOOKUP)· Jupyter · 数学建模</p>
+    </div>
   </section>
 
 </div>

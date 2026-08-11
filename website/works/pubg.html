@@ -6,37 +6,58 @@
 <title>作品一 · PUBG 玩家行为与价值分层分析</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/system.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <span class="nav-brand">张君杰 · 数据运营作品集</span>
-    <div class="nav-links">
-      <a href="../index.html">首页</a>
-      <a href="pubg.html" class="active">作品一 · PUBG 分层</a>
-      <a href="olist.html">作品二 · 电商生命周期</a>
-    </div>
+<!-- 导航 -->
+<nav class="nav container">
+  <a class="nav-brand" href="../index.html">
+    <span class="nav-brand-mark"></span>
+    张君杰 · 数据运营作品集
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="../index.html">首页</a>
+    <a class="nav-link" href="pubg.html" aria-current="page">作品一 · PUBG 分层</a>
+    <a class="nav-link" href="olist.html">作品二 · 电商生命周期</a>
   </div>
 </nav>
 
+<!-- Hero -->
 <header class="hero">
   <div class="container">
-    <h1>作品一 · PUBG 玩家对局行为与价值分层</h1>
+    <p class="eyebrow" style="margin-bottom:16px;">作品 01 · 游戏向</p>
+    <h1>PUBG 玩家对局行为与价值分层</h1>
     <p class="subtitle">作为数据运营,回答:谁是我们的高价值玩家?他们的行为特征是什么?如何识别和培养?</p>
   </div>
 </header>
 
 <div class="container">
 
-  <!-- KPI 概览 -->
-  <div class="kpi-grid">
-    <div class="kpi"><div class="value">444万</div><div class="label">玩家对局记录</div></div>
-    <div class="kpi"><div class="value">175万</div><div class="label">四排模式数据</div></div>
-    <div class="kpi"><div class="value">5类</div><div class="label">玩家分层模型</div></div>
-    <div class="kpi"><div class="value">56.8%</div><div class="label">一局0击杀玩家</div></div>
+  <!-- KPI: stat-tile -->
+  <div class="grid-4" style="margin:var(--space-8) 0;">
+    <div class="stat-tile" data-tone="info">
+      <div class="stat-head"><span class="stat-eyebrow">玩家对局记录</span></div>
+      <div class="stat-value">444万</div>
+      <div class="stat-foot">原始数据</div>
+    </div>
+    <div class="stat-tile" data-tone="success">
+      <div class="stat-head"><span class="stat-eyebrow">四排模式数据</span></div>
+      <div class="stat-value">175万</div>
+      <div class="stat-foot">聚焦主流模式</div>
+    </div>
+    <div class="stat-tile" data-tone="warning">
+      <div class="stat-head"><span class="stat-eyebrow">玩家分层模型</span></div>
+      <div class="stat-value">5类</div>
+      <div class="stat-foot">伤害 × 名次</div>
+    </div>
+    <div class="stat-tile" data-tone="danger">
+      <div class="stat-head"><span class="stat-eyebrow">一局 0 击杀玩家</span></div>
+      <div class="stat-value">56.8%</div>
+      <div class="stat-foot">幂律分布特征</div>
+    </div>
   </div>
 
   <!-- ① 项目背景 -->
@@ -67,7 +88,7 @@
   <section class="chart-card">
     <h2>③ 关键发现:击杀数的"幂律分布"</h2>
     <p>玩家击杀数呈典型的 <strong>长尾分布</strong> —— <span class="highlight">56.8% 的玩家一局 0 击杀</span>,极少数高手贡献绝大部分击杀。</p>
-    <img src="../assets/01_kill_distribution.png" alt="击杀数分布">
+    <img src="../assets/01_kill_distribution_dark.png" alt="击杀数分布">
     <div class="action-plan">
       <div class="plan-title">运营洞察</div>
       <ul>
@@ -77,7 +98,7 @@
     </div>
   </section>
 
-  <!-- ③.5 关键代码:幂律分布验证 -->
+  <!-- ③.5 关键代码 -->
   <section class="chart-card">
     <h2>③ 附:关键分析代码 —— 幂律分布验证</h2>
     <pre class="code-block"><span class="cm"># 击杀数分布:验证"幂律分布"假设</span>
@@ -95,7 +116,7 @@
   <section class="chart-card">
     <h2>④ 玩家价值分层模型</h2>
     <p>用 <strong>战斗维度(造成伤害)</strong> × <strong>生存维度(完赛名次)</strong> 交叉,建立 5 类玩家分层。为什么用"伤害"而非"击杀"?——击杀是结果,伤害是投入,用投入更能提前识别"有潜力但没结果"的玩家。</p>
-    <img src="../assets/02_segment_share.png" alt="玩家分层占比">
+    <img src="../assets/02_segment_share_dark.png" alt="玩家分层占比">
     <table class="data-table">
       <tr><th>玩家分层</th><th>占比</th><th>画像</th></tr>
       <tr><td>核心高手(全能)</td><td>17.9%</td><td>高伤害 + 高存活,顶尖玩家</td></tr>
@@ -125,7 +146,7 @@
   <section class="chart-card">
     <h2>⑤ 分层验证:每类玩家特征是否"名副其实"</h2>
     <p>验证每类的核心指标是否符合预期画像,确保分层稳健。</p>
-    <img src="../assets/03_segment_features.png" alt="分层特征对比">
+    <img src="../assets/03_segment_features_dark.png" alt="分层特征对比">
     <table class="data-table">
       <tr><th>玩家分层</th><th>造成伤害</th><th>完赛名次</th><th>步行距离</th><th>击杀数</th><th>捡武器数</th></tr>
       <tr><td>双弱型</td><td>0</td><td>0.1</td><td>81.5</td><td>0</td><td>1.0</td></tr>
