@@ -4,52 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>张君杰 · 数据运营作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- 导航 -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-brand">张君杰 · 数据运营作品集</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">首页</a>
+      <a href="works/pubg.html">作品一 · PUBG 分层</a>
+      <a href="works/olist.html">作品二 · 电商生命周期</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
 <header class="hero">
   <div class="container">
-    <h1>张君杰 · 数据运营作品集</h1>
-    <p>安徽建筑大学 · 信息与计算科学 · 2027 届</p>
-    <p>数据分析 | 用户分层 | 运营决策</p>
+    <h1>张君杰</h1>
+    <p class="subtitle">数据运营 · 数据分析 · 用户分层</p>
+    <p class="tagline">安徽建筑大学 <span>·</span> 信息与计算科学 <span>·</span> 2027 届</p>
   </div>
 </header>
 
 <div class="container">
 
-  <!-- KPI -->
+  <!-- KPI 数据条 -->
   <div class="kpi-grid">
-    <div class="kpi"><div class="value">2</div><div class="label">个作品</div></div>
     <div class="kpi"><div class="value">444万</div><div class="label">游戏行为数据</div></div>
     <div class="kpi"><div class="value">10万</div><div class="label">电商订单数据</div></div>
     <div class="kpi"><div class="value">5类</div><div class="label">玩家分层模型</div></div>
+    <div class="kpi"><div class="value">2</div><div class="label">完整作品</div></div>
   </div>
 
-  <!-- 作品列表 -->
+  <!-- 作品网格 -->
   <section class="chart-card">
     <h2>作品集</h2>
+    <div class="works-grid">
 
-    <h3><a href="works/pubg.html" style="color:#1f4e79;">作品一 · PUBG 玩家行为与价值分层</a></h3>
-    <p>用 444 万条玩家对局行为数据,建立"战斗 × 生存"双维度的 5 类玩家分层模型,发现"落地成盒"流失风险群体,输出差异化运营方案。</p>
-    <p><strong>核心能力</strong>:数据清洗 · 分布洞察 · 分层建模 · 数据审计 · 运营方案</p>
+      <div class="work-card">
+        <div class="work-header">
+          <div class="work-num">作品 01</div>
+          <h3>PUBG 玩家行为与价值分层</h3>
+        </div>
+        <div class="work-body">
+          <p>用 444 万条玩家对局行为数据,建立"战斗 × 生存"双维度的 5 类玩家分层模型,发现"落地成盒"流失风险群体,输出差异化运营方案。</p>
+          <div class="work-skills">
+            <span class="skill-tag">数据清洗</span>
+            <span class="skill-tag">分布洞察</span>
+            <span class="skill-tag">分层建模</span>
+            <span class="skill-tag">数据审计</span>
+            <span class="skill-tag">运营方案</span>
+          </div>
+          <a class="work-link" href="works/pubg.html">查看作品</a>
+        </div>
+      </div>
 
-    <h3><a href="works/olist.html" style="color:#1f4e79;">作品二 · 电商用户生命周期与付费分析</a></h3>
-    <p>用 Olist 电商数据建立"用户分层 → 生命周期 → 付费价值"方法论框架,可迁移到游戏等任何产品。</p>
-    <p><strong>核心能力</strong>:用户生命周期 · RFM 分层 · 方法论输出</p>
+      <div class="work-card">
+        <div class="work-header">
+          <div class="work-num">作品 02</div>
+          <h3>电商用户生命周期与付费分析</h3>
+        </div>
+        <div class="work-body">
+          <p>用 Olist 电商数据建立"用户分层 → 生命周期 → 付费价值"方法论框架,可迁移到游戏等任何产品,展示通用的用户分析能力。</p>
+          <div class="work-skills">
+            <span class="skill-tag">用户生命周期</span>
+            <span class="skill-tag">RFM 分层</span>
+            <span class="skill-tag">方法论输出</span>
+          </div>
+          <a class="work-link" href="works/olist.html">查看作品</a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- 关于我 -->
   <section class="chart-card">
     <h2>关于我</h2>
-    <p><strong>教育</strong>:安徽建筑大学 · 信息与计算科学(2023-2027),主修概率论、运筹学、数据分析、Python</p>
-    <p><strong>经历</strong>:SaaS 销售实习(用 Excel 做客户分层与 ROI 测算)· 校学生会外联(活动策划与资源协调)</p>
-    <p><strong>工具</strong>:Python(pandas/numpy/seaborn)· Excel(数据透视/VLOOKUP)· Jupyter</p>
+    <p><strong>教育背景</strong> · 安徽建筑大学 · 信息与计算科学(2023-2027)</p>
+    <p>主修概率论与数理统计、运筹学、数学建模、数据分析、Python 程序设计</p>
+    <p class="mt"><strong>实践经历</strong> · SaaS 产品销售实习(客户分层与 ROI 测算)· 校学生会外联(活动策划与资源协调)</p>
+    <p class="mt"><strong>工具技能</strong> · Python(pandas/numpy/seaborn)· Excel(数据透视/VLOOKUP)· Jupyter · 数学建模</p>
   </section>
 
 </div>
 
-<footer>张君杰 · 数据运营作品集</footer>
+<footer>张君杰 · 数据运营作品集 · 求职目标:游戏运营 / 数据运营</footer>
 
 </body>
 </html>
