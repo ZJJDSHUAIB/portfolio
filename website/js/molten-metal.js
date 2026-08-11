@@ -118,6 +118,16 @@ export class MoltenMetal {
     if (!container) throw new Error('MoltenMetal: 需要容器元素');
     this.container = container;
 
+    // 若容器内有 .molten-canvas-layer,canvas 放进该层(绝对定位,不撑开布局);
+    // 否则直接放容器内,并给容器加 position:relative + overflow:hidden
+    const layer = container.querySelector('.molten-canvas-layer');
+    this.canvasHost = layer || container;
+    if (!layer) {
+      const cs = getComputedStyle(container);
+      if (cs.position === 'static') container.style.position = 'relative';
+      container.style.overflow = 'hidden';
+    }
+
     // 默认参数
     this.options = Object.assign(
       {
@@ -157,7 +167,7 @@ export class MoltenMetal {
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.display = 'block';
-    container.appendChild(canvas);
+    this.canvasHost.appendChild(canvas);
 
     this.geometry = new Triangle(gl);
     this.program = new Program(gl, {
@@ -193,11 +203,13 @@ export class MoltenMetal {
     // 应用初始参数
     this.applyOptions(this.options);
 
-    // 尺寸自适应
+    // 尺寸自适应:观察容器(而非 canvas),canvas 绝对定位铺满层,不参与文档流
     this.setSize = () => {
       const rect = container.getBoundingClientRect();
       const w = Math.max(1, Math.floor(rect.width));
       const h = Math.max(1, Math.floor(rect.height));
+      // 防止异常放大(防御:限制在合理范围)
+      if (h > 4000) return;
       this.renderer.setSize(w, h);
       const res = this.program.uniforms.iResolution.value;
       res[0] = gl.drawingBufferWidth;
@@ -205,8 +217,8 @@ export class MoltenMetal {
       this.renderer.render({ scene: this.mesh });
     };
 
-    this.ro = new ResizeObserver(this.setSize);
-    this.ro.observe(container);
+    this.ro = new ResizeObserver(() => this.setSize());
+    this.ro.observe(this.canvasHost);
     this.setSize();
 
     // 鼠标交互
@@ -317,8 +329,8 @@ export class MoltenMetal {
     this.container.removeEventListener('mouseleave', this.handleMouseLeave);
     try {
       const canvas = this.renderer.gl.canvas;
-      if (canvas && this.container.contains(canvas)) {
-        this.container.removeChild(canvas);
+      if (canvas && this.canvasHost.contains(canvas)) {
+        this.canvasHost.removeChild(canvas);
       }
     } catch (e) {}
     try {
