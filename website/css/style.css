@@ -10,6 +10,28 @@
    --font-*),不引入新视觉风格。
    ============================================================= */
 
+/* ---- MoltenMetal Hero 背景层 ---- */
+.molten-hero {
+    position: relative;
+    overflow: hidden;
+}
+.molten-hero .molten-canvas-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.molten-hero > .container {
+    position: relative;
+    z-index: 1;
+}
+/* 降级:ogl CDN 加载失败时,保留静态暗色渐变 */
+.molten-hero.molten-fallback {
+    background:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(91, 107, 255, 0.14), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 100%, rgba(61, 215, 229, 0.08), transparent 60%),
+        var(--color-background);
+}
+
 /* ---- 导航增强:sticky 定位(仅定位,不改变 Halo 视觉) ---- */
 .nav {
     position: sticky;
