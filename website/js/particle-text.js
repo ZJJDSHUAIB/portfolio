@@ -227,7 +227,7 @@ export class ParticleText {
       particle.x += (baseX - particle.x) * follow;
       particle.y += (baseY - particle.y) * follow;
 
-      ctx.globalAlpha = this._clamp(0.35 + progress * 0.65, 0, 1);
+      ctx.globalAlpha = this._clamp(0.6 + progress * 0.4, 0, 1);
       this._drawParticle(particle);
     });
 
@@ -340,8 +340,10 @@ export class ParticleText {
     this.particles = selected.map((target, index) => {
       const seed = ((index * 9301 + 49297) % 233280) / 233280;
       const depth = 0.45 + (((index * 233 + 97) % 1000) / 1000) * 0.9;
+      // 颜色混合:大部分粒子保持主体色(白),仅少量随机粒子带高亮色点缀。
+      // 原逻辑 target.x/width 使 blend 恒在 0.3~0.7,导致全部粒子偏蓝。
       const blend = baseRgb && highlightRgb
-        ? this._clamp(target.x / Math.max(1, this.width) + (seed - 0.5) * 0.35, 0, 1)
+        ? (seed > 0.82 ? seed * 0.9 : 0)
         : 0;
       const particleColor = baseRgb && highlightRgb
         ? this._rgbToCss(this._mixRgb(baseRgb, highlightRgb, blend))
