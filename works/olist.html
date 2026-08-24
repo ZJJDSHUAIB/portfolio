@@ -25,8 +25,9 @@
   </div>
 </nav>
 
-<!-- Hero -->
-<header class="hero">
+<!-- Hero(带 MoltenMetal 背景) -->
+<header class="hero molten-hero" data-color1="#5B6BFF" data-color2="#2BE08C" data-color3="#F2F4F8" data-opacity="1.0">
+  <div class="molten-canvas-layer"></div>
   <div class="container">
     <p class="eyebrow" style="margin-bottom:16px;">作品 02 · 通用向</p>
     <h1>电商用户生命周期与付费分析</h1>
@@ -249,6 +250,19 @@
 </div>
 
 <footer>张君杰 · 数据运营作品集 · 作品二 · 数据源:Kaggle Olist</footer>
+
+<!-- MoltenMetal 背景:ogl 本地化,不依赖 CDN -->
+<script type="importmap">
+{
+  "imports": {
+    "ogl": "../js/ogl/index.js"
+  }
+}
+</script>
+<script type="module">
+  import { initMolten } from '../js/molten-init.js';
+  initMolten();
+</script>
 
 </body>
 </html>
