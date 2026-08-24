@@ -111,25 +111,29 @@
     </div>
   </section>
 
-  <!-- ④ 迁移到游戏 -->
+  <!-- ④ 生命周期定义与验证 -->
   <section class="chart-card">
-    <h2>④ 方法论迁移到游戏场景</h2>
-    <p>这套框架不是只能用于电商 —— 它的每一步在游戏里都有对应,这正是"通用分析框架"的价值。</p>
+    <h2>④ 生命周期定义与阈值验证</h2>
+    <p>严谨的生命周期分析需先明确<strong>观察期、评估时点、判定标准</strong>,并用数据验证阈值,而非拍脑袋。</p>
     <table class="data-table">
-      <tr><th>电商概念</th><th>游戏概念</th><th>运营动作</th></tr>
-      <tr><td>消费金额</td><td>付费金额(ARPPU)</td><td>识别高付费玩家</td></tr>
-      <tr><td>复购</td><td>留存(再次登录/再次游玩)</td><td>提升次日/7日留存</td></tr>
-      <tr><td>沉默/流失</td><td>玩家流失</td><td>流失预警与召回</td></tr>
-      <tr><td>高价值客户</td><td>高付费/高活跃玩家</td><td>重点运营与激励</td></tr>
-      <tr><td>品类偏好</td><td>角色/玩法偏好</td><td>个性化内容推荐</td></tr>
+      <tr><th>要素</th><th>设定</th><th>依据</th></tr>
+      <tr><td>观察期</td><td>2016-09 ~ 2018-08</td><td>排除 2018-09 后数据停更的断崖尾巴</td></tr>
+      <tr><td>评估时点</td><td>2018-08-30</td><td>数据最后一天,视为"今天"</td></tr>
+      <tr><td>沉默阈值</td><td>90 天</td><td>复购间隔中位数 69 天,超一个周期即风险</td></tr>
+      <tr><td>流失阈值</td><td>180 天</td><td>行业惯例,需敏感性验证</td></tr>
     </table>
+    <img src="../assets/04_repeat_interval.png" alt="复购间隔分布">
     <div class="action-plan">
-      <div class="plan-title">能力证明</div>
-      <p>作品一(PUBG 分层)就是用这套框架做的游戏场景落地 —— 用户分层 → 行为分析 → 差异化运营方案。</p>
+      <div class="plan-title">阈值验证结论</div>
+      <ul>
+        <li><strong>90 天沉默有数据依据</strong>:复购间隔中位 69 天,"超一个购买周期未购"即流失风险</li>
+        <li><strong>180 天流失需谨慎</strong>:23.5% 的复购间隔超过 180 天 —— 用 180 天判流失会误判这批"隔很久仍会回来"的客户</li>
+        <li><strong>严谨做法</strong>:展示间隔分布证明阈值合理性,并可做 90/180/270 天敏感性验证</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ⑤ 关键洞察:长尾分布 -->
+  <!-- ⑥ 关键洞察:长尾分布 -->
   <section class="chart-card">
     <h2>⑤ 关键洞察:96.9% 客户只买 1 单</h2>
     <p>聚合客户后,发现订单数呈典型<strong>长尾分布</strong>:绝大部分客户只购买一次。</p>
@@ -203,9 +207,32 @@
     </div>
   </section>
 
-  <!-- ⑩ 方法论迁移 -->
+  <!-- ⑩ A/B Test 实验设计 -->
   <section class="chart-card">
-    <h2>⑩ 方法论迁移到游戏</h2>
+    <h2>⑩ A/B Test 实验设计:验证策略有效性</h2>
+    <p>运营策略不能"拍脑袋发券",需用实验验证。<strong>对 18,624 名高价值单次客户</strong>设计复购优惠券 A/B Test:</p>
+    <table class="data-table">
+      <tr><th>设计要素</th><th>方案</th></tr>
+      <tr><td>实验组(50%)</td><td>发放复购优惠券(满减券)</td></tr>
+      <tr><td>对照组(50%)</td><td>不干预(自然复购基线)</td></tr>
+      <tr><td>分组方式</td><td>按客户 ID 哈希随机分组,保证两组特征均衡</td></tr>
+      <tr><td>样本量</td><td>每组约 9,312 人(预期复购率 3.1%→5%,需最小样本约 5,000/组)</td></tr>
+      <tr><td>主指标</td><td>30 日复购率(实验组 vs 对照组)</td></tr>
+      <tr><td>次要指标</td><td>30 日 GMV 增量、客单价、优惠券核销率</td></tr>
+      <tr><td>成本指标</td><td>补贴成本、ROI(GMV 增量 / 补贴成本)</td></tr>
+      <tr><td>周期</td><td>14 天发放期 + 30 天观察期</td></tr>
+      <tr><td>检验方法</td><td>卡方检验(复购率)、t 检验(GMV),按消费档位分层看效果</td></tr>
+      <tr><td>放量决策</td><td>复购率提升≥30% 且 ROI≥1.5 → 全量放量;否则停止/调整</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">为什么这是"数据运营思维"</div>
+      <p>不是"发券"就完事,而是:<strong>随机分组 → 对照组基线 → 显著性检验 → ROI 决策</strong>。用实验证明策略有效,而非想当然。</p>
+    </div>
+  </section>
+
+  <!-- ⑪ 方法论迁移 -->
+  <section class="chart-card">
+    <h2>⑪ 方法论迁移到游戏</h2>
     <p>这套"客户聚合 → 分层 → 复购差异 → 精准转化"框架,与作品一(PUBG 玩家分层)同源:</p>
     <table class="data-table">
       <tr><th>电商概念</th><th>游戏概念</th><th>运营动作</th></tr>

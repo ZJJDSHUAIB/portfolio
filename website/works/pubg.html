@@ -166,6 +166,27 @@
     </div>
   </section>
 
+  <!-- ⑤.5 阈值敏感性验证 -->
+  <section class="chart-card">
+    <h2>⑤ 附:分层阈值敏感性验证</h2>
+    <p>分层依赖"高伤害"阈值(默认 P75)。为验证模型稳健性,测试 P60/P75/P90 三个阈值下,5 类玩家占比是否稳定。</p>
+    <img src="../assets/04_sensitivity.png" alt="阈值敏感性验证">
+    <table class="data-table">
+      <tr><th>阈值</th><th>核心高手</th><th>战斗型</th><th>潜力型</th><th>双弱型</th><th>生存型</th></tr>
+      <tr><td>P60</td><td>25.7%</td><td>8.0%</td><td>44.9%</td><td>14.6%</td><td>6.8%</td></tr>
+      <tr><td>P75</td><td>17.9%</td><td>3.6%</td><td>57.1%</td><td>14.6%</td><td>6.8%</td></tr>
+      <tr><td>P90</td><td>8.6%</td><td>0.5%</td><td>69.5%</td><td>14.6%</td><td>6.8%</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">敏感性结论</div>
+      <ul>
+        <li><strong>双弱型(14.6%)和生存型(6.8%)完全稳定</strong> —— 不依赖阈值,是最稳健的分层结论</li>
+        <li><strong>核心高手+战斗型随阈值变化</strong>(33.7%→9.1%)——"高伤害"定义越严,精英占比越小,符合预期</li>
+        <li><strong>解读时区分稳健与敏感结论</strong>:流失风险/生存型结论可靠,精英型占比需结合阈值谨慎解读</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ⑥ 深度洞察:落地成盒 -->
   <section class="chart-card">
     <h2>⑥ 深度洞察:"落地成盒"的流失风险群体</h2>
