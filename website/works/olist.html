@@ -25,9 +25,8 @@
   </div>
 </nav>
 
-<!-- Hero(带 MoltenMetal 背景) -->
-<header class="hero molten-hero" data-color1="#5B6BFF" data-color2="#2BE08C" data-color3="#F2F4F8" data-opacity="1.0">
-  <div class="molten-canvas-layer"></div>
+<!-- Hero -->
+<header class="hero">
   <div class="container">
     <p class="eyebrow" style="margin-bottom:16px;">作品 02 · 通用向</p>
     <h1>电商用户生命周期与付费分析</h1>
@@ -40,24 +39,24 @@
   <!-- KPI: stat-tile -->
   <div class="grid-4" style="margin:var(--space-8) 0;">
     <div class="stat-tile" data-tone="info">
-      <div class="stat-head"><span class="stat-eyebrow">电商订单</span></div>
+      <div class="stat-head"><span class="stat-eyebrow">有效订单</span></div>
       <div class="stat-value">9.9万</div>
-      <div class="stat-foot">Olist 订单</div>
+      <div class="stat-foot">巴西电商订单</div>
     </div>
     <div class="stat-tile" data-tone="success">
-      <div class="stat-head"><span class="stat-eyebrow">生命周期阶段</span></div>
-      <div class="stat-value">4类</div>
-      <div class="stat-foot">新客/复购/沉默/流失</div>
+      <div class="stat-head"><span class="stat-eyebrow">真实客户</span></div>
+      <div class="stat-value">9.6万</div>
+      <div class="stat-foot">customer_unique_id</div>
     </div>
     <div class="stat-tile" data-tone="warning">
-      <div class="stat-head"><span class="stat-eyebrow">价值分层方法</span></div>
-      <div class="stat-value">RFM</div>
-      <div class="stat-foot">金额/频次/近度</div>
+      <div class="stat-head"><span class="stat-eyebrow">只买1单客户</span></div>
+      <div class="stat-value">96.9%</div>
+      <div class="stat-foot">长尾分布</div>
     </div>
-    <div class="stat-tile">
-      <div class="stat-head"><span class="stat-eyebrow">方法论框架</span></div>
-      <div class="stat-value">5步</div>
-      <div class="stat-foot">可迁移到任何产品</div>
+    <div class="stat-tile" data-tone="danger">
+      <div class="stat-head"><span class="stat-eyebrow">复购价值倍数</span></div>
+      <div class="stat-value">1.95x</div>
+      <div class="stat-foot">复购 vs 单次消费</div>
     </div>
   </div>
 
@@ -130,33 +129,95 @@
     </div>
   </section>
 
-  <!-- ⑤ 分析进行中 -->
+  <!-- ⑤ 关键洞察:长尾分布 -->
   <section class="chart-card">
-    <h2>⑤ 分析进行中</h2>
-    <p>本作品的完整数据分析(生命周期分布、RFM 分层图表)正在制作中。框架与方法论已确定,后续将补充:</p>
-    <ul>
-      <li>Olist 数据清洗与分析脚本</li>
-      <li>用户生命周期分布图表</li>
-      <li>高价值用户 RFM 画像</li>
-    </ul>
+    <h2>⑤ 关键洞察:96.9% 客户只买 1 单</h2>
+    <p>聚合客户后,发现订单数呈典型<strong>长尾分布</strong>:绝大部分客户只购买一次。</p>
+    <img src="../assets/01_order_count.png" alt="客户订单数分布">
+    <div class="action-plan">
+      <div class="plan-title">运营洞察</div>
+      <p><strong>平台缺乏复购粘性</strong> —— 客户来一次就走。这决定了运营的核心命题不是"拉新",而是<strong>"让客户回来再买"</strong>。</p>
+    </div>
+  </section>
+
+  <!-- ⑥ 消费分层 -->
+  <section class="chart-card">
+    <h2>⑥ 消费分位数 4 档分层</h2>
+    <p>按总消费分位数把客户分为 4 档,观察各档特征。</p>
+    <img src="../assets/02_value_tiers.png" alt="消费价值分层">
+    <table class="data-table">
+      <tr><th>价值档</th><th>人数</th><th>平均消费</th><th>平均订单数</th></tr>
+      <tr><td>低</td><td>24,026</td><td>43.7</td><td>1.0</td></tr>
+      <tr><td>中低</td><td>24,037</td><td>83.8</td><td>1.0</td></tr>
+      <tr><td>中高</td><td>24,012</td><td>141.5</td><td>1.0</td></tr>
+      <tr><td>高</td><td>24,021</td><td>397.5</td><td>1.1</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">关键发现</div>
+      <p><strong>各档平均订单数几乎都是 1</strong> —— 高价值客户不是靠"多买几次",而是靠"单次买很贵"。消费差距(高/低 ≈ 9 倍)全在单次金额上,不在购买次数上。</p>
+    </div>
+  </section>
+
+  <!-- ⑦ 复购 vs 单次 -->
+  <section class="chart-card">
+    <h2>⑦ 复购客户 vs 单次客户:价值差近 2 倍</h2>
+    <img src="../assets/03_repeat_vs_once.png" alt="复购对比单次">
+    <div class="action-plan">
+      <div class="plan-title">核心数据</div>
+      <ul>
+        <li><strong>复购客户(2,997人)平均消费 315</strong>,单次客户(93,099人)平均 161.8</li>
+        <li>复购价值是单次的 <strong>1.95 倍</strong> —— 把客户变成复购,价值接近翻倍</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑧ 高价值单次客户 -->
+  <section class="chart-card">
+    <h2>⑧ 高价值单次客户:复购转化的精准靶心</h2>
+    <p>单次客户有 93,099 人,运营资源无法全部覆盖。用消费分位数(前 20%)筛选出<strong>最值得转化的高价值单次客户</strong>。</p>
+    <div class="action-plan">
+      <div class="plan-title">精准运营对象</div>
+      <ul>
+        <li><strong>高价值单次客户:18,624 人</strong>(单次消费 ≥ 203),平均消费 <strong>433.1</strong></li>
+        <li>这批人已证明"有钱、愿意花",只是还没被运营留住 → <strong>复购转化的最佳靶心</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑨ 运营落地方案 -->
+  <section class="chart-card">
+    <h2>⑨ 运营落地方案</h2>
+    <p>聚焦高价值单次客户,通过复购激励将其转化为复购客户。</p>
+    <div class="action-plan">
+      <div class="plan-title">复购转化策略</div>
+      <ul>
+        <li><strong>定向优惠券</strong>:向 18,624 名高价值单次客户发放复购优惠券</li>
+        <li><strong>会员等级体系</strong>:消费达门槛自动升级,绑定长期关系</li>
+        <li><strong>购买后召回</strong>:首单完成 30 天后触发二次转化(邮件/推送)</li>
+        <li><strong>品类推荐</strong>:按首购品类推荐关联商品,提高复购意愿</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑩ 方法论迁移 -->
+  <section class="chart-card">
+    <h2>⑩ 方法论迁移到游戏</h2>
+    <p>这套"客户聚合 → 分层 → 复购差异 → 精准转化"框架,与作品一(PUBG 玩家分层)同源:</p>
+    <table class="data-table">
+      <tr><th>电商概念</th><th>游戏概念</th><th>运营动作</th></tr>
+      <tr><td>单次客户</td><td>低活跃/0击杀玩家</td><td>新手引导 / 首日留存</td></tr>
+      <tr><td>复购客户</td><td>高活跃/付费玩家</td><td>重点维护 / 付费激励</td></tr>
+      <tr><td>高价值单次</td><td>高潜力玩家</td><td>潜力识别 / 定向培养</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">能力证明</div>
+      <p><strong>"一套通用的用户分层框架,能迁移到任何产品"</strong> —— 作品一(游戏)和作品二(电商)用同一套方法论落地,证明可迁移性。</p>
+    </div>
   </section>
 
 </div>
 
 <footer>张君杰 · 数据运营作品集 · 作品二 · 数据源:Kaggle Olist</footer>
-
-<!-- MoltenMetal 背景:ogl 本地化,不依赖 CDN -->
-<script type="importmap">
-{
-  "imports": {
-    "ogl": "../js/ogl/index.js"
-  }
-}
-</script>
-<script type="module">
-  import { initMolten } from '../js/molten-init.js';
-  initMolten();
-</script>
 
 </body>
 </html>
