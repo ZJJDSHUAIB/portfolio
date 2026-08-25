@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品三 · 三角洲行动游戏运营拆解</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/system.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav container">
+  <a class="nav-brand" href="../index.html">
+    <span class="nav-brand-mark"></span>
+    张君杰 · 数据运营作品集
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="../index.html">首页</a>
+    <a class="nav-link" href="pubg.html">作品一 · PUBG 分层</a>
+    <a class="nav-link" href="olist.html">作品二 · 电商生命周期</a>
+    <a class="nav-link" href="delta.html" aria-current="page">作品三 · 三角洲拆解</a>
+  </div>
+</nav>
+
+<header class="hero molten-hero" data-color1="#5B6BFF" data-color2="#F5D547" data-color3="#F2F4F8" data-opacity="1.0">
+  <div class="molten-canvas-layer"></div>
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:16px;">作品 03 · 游戏理解</p>
+    <h1>三角洲行动 · 游戏运营拆解</h1>
+    <p class="subtitle">以运营视角拆解撤离制射击游戏的留存 / 活跃 / 付费设计,展示游戏理解 + 运营思维。</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- KPI -->
+  <div class="grid-4" style="margin:var(--space-8) 0;">
+    <div class="stat-tile" data-tone="info">
+      <div class="stat-head"><span class="stat-eyebrow">拆解模块</span></div>
+      <div class="stat-value">6</div>
+      <div class="stat-foot">玩法/分层/枪械/赛季/段位/经济</div>
+    </div>
+    <div class="stat-tile" data-tone="success">
+      <div class="stat-head"><span class="stat-eyebrow">玩家分层</span></div>
+      <div class="stat-value">4类</div>
+      <div class="stat-foot">跑刀/猛攻/策略/均衡</div>
+    </div>
+    <div class="stat-tile" data-tone="warning">
+      <div class="stat-head"><span class="stat-eyebrow">核心洞察</span></div>
+      <div class="stat-value">5+</div>
+      <div class="stat-foot">行为匹配/战备分层/风险曲线</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-head"><span class="stat-eyebrow">视角</span></div>
+      <div class="stat-value">玩家+</div>
+      <div class="stat-foot">真实体验观察</div>
+    </div>
+  </div>
+
+  <!-- ① 核心玩法循环 -->
+  <section class="chart-card">
+    <h2>① 核心玩法循环</h2>
+    <p><strong>核心循环</strong>:搜集资源 → 冲突/规避 → 撤离 → 收益兑现 → 投入下局。</p>
+    <div class="action-plan">
+      <div class="plan-title">玩家真实感受</div>
+      <p>"撤离成功保住战利品的充实感,像屯屯鼠攒东西,吃到东西就很开心。"</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">运营解读</div>
+      <ul>
+        <li>撤离制构建「获取-积累-展示」的成长正反馈循环</li>
+        <li>相比"只有击杀才爽"的纯竞技,撤离制让"活着撤离"同样构成胜利</li>
+        <li>技术型与资源型玩家都能获得成长感 → <strong>扩大了可留存玩家的覆盖,降低留存门槛</strong></li>
+      </ul>
+    </div>
+    <p><strong>我的判断</strong>:"人人都能赢"的循环设计,是撤离制品类留存率高于纯竞技的结构性原因之一。</p>
+  </section>
+
+  <!-- ② 玩家分层 -->
+  <section class="chart-card">
+    <h2>② 玩家分层(灵魂)</h2>
+    <table class="data-table">
+      <tr><th>玩家类型</th><th>行为特征</th><th>对游戏的价值</th><th>运营策略</th></tr>
+      <tr><td>资源型(跑刀鼠鼠)</td><td>低风险摸金,专注积累</td><td>高在线时长,生态"供给端"</td><td>保护积累感,防挫败</td></tr>
+      <tr><td>战斗型(猛攻大师)</td><td>高冲突,专注击杀</td><td>制造冲突,生态"消耗端"</td><td>给足战斗快感,竞技激励</td></tr>
+      <tr><td>策略型(阴间玩法)</td><td>智取(堵桥/蹲闸),以弱胜强</td><td>增加博弈深度</td><td>鼓励创造性玩法,关注平衡</td></tr>
+      <tr><td>均衡型(普通玩家)</td><td>既打架也摸东西</td><td>主流大众,基本盘</td><td>降低门槛,保证基础爽感</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">生态洞察</div>
+      <p>资源型是"供给端"(产出物资),战斗型是"消耗端"(消耗物资、制造冲突)——<strong>两类玩家互相依存,构成游戏经济生态</strong>。</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">核心洞察一:行为匹配 = 用系统做分层运营</div>
+      <p>玩家普遍观察到"匹配机制总是让你排到相似的玩法"(跑刀碰跑刀、猛攻碰猛攻)。<strong>这是"用户分层 → 策略落地"在匹配规则上的应用</strong>。</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">核心洞察二(亮点):玩家伪装特征反制匹配</div>
+      <p>部分玩家识破规则后,故意"伪装特征"(携带红蛋、全新甲)影响匹配,以进高爆局。这构成"系统设计 vs 玩家反制"的博弈——<strong>任何基于行为特征的匹配系统都会被玩家演化出对策,运营需持续迭代规则</strong>。</p>
+    </div>
+  </section>
+
+  <!-- ③ 枪械改装 -->
+  <section class="chart-card">
+    <h2>③ 枪械改装系统</h2>
+    <ul>
+      <li><strong>改装即表达</strong>:千变万化的改装(修脚/当老鼠/正面刚)支持玩家个性化打法</li>
+      <li><strong>改装即赌注</strong>:满改枪 = 高成本进图,强化"一局赌注"的刺激感</li>
+      <li><strong>改装即经济引擎</strong>:高投入-高回报-高风险,驱动"赚钱→改装→进高战备局"循环</li>
+    </ul>
+    <div class="action-plan">
+      <div class="plan-title">核心洞察一:战备即分层门槛</div>
+      <p>玩家观察到"改装影响战备,战备影响匹配"。<strong>装备价值是匹配的一个维度</strong>:低战备局=新手/跑刀局,高战备局=高回报高风险。战备匹配 = 用"玩家自己攒的装备价值"作为分层驱动 → 玩家主动升级装备,形成"装备驱动"的进阶路径。</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">核心洞察二:强者也翻车(平衡设计)</div>
+      <p>满改枪赚钱几率大但战损也大 → <strong>高战备=高赌注,高手也在赌</strong>。防止"强者恒强",对普通玩家保持"可追赶"性。</p>
+    </div>
+  </section>
+
+  <!-- ④ 赛季/通行证 -->
+  <section class="chart-card">
+    <h2>④ 赛季 / 通行证</h2>
+    <ul>
+      <li><strong>内容驱动回归</strong>:新地图/武器/机制制造新鲜感,拉动老玩家回归(体感赛季初活跃最高)</li>
+      <li><strong>通行证 = 内容 + 付费双载体</strong>:皮肤(情绪)+ 物资(实用)双轨驱动付费</li>
+      <li><strong>赛季周期管理</strong>:赛季初新内容拉高波峰 → 赛季中通行证维持 → 赛季末冲段位/清进度</li>
+    </ul>
+    <div class="action-plan">
+      <div class="plan-title">核心洞察:损失厌恶绑定期中活跃</div>
+      <p>通行证的沉没成本("买了不肝完就亏")驱动持续在线,是"用心理学设计留住中期活跃"的典型。</p>
+    </div>
+  </section>
+
+  <!-- ⑤ 段位/竞技 -->
+  <section class="chart-card">
+    <h2>⑤ 段位 / 竞技</h2>
+    <p><strong>段位 = 身份分层</strong>:营造等级归属感与向上目标,是竞技玩家的核心驱动力。</p>
+    <div class="action-plan">
+      <div class="plan-title">核心洞察:段位 ≠ 实力</div>
+      <ul>
+        <li>玩家观察到"段位高不一定是战斗强,可能是阴人拿的分"</li>
+        <li><strong>段位是"结果分层",战备是"投入分层",打法是"行为分层"——三套系统并行,并不总一致</strong></li>
+        <li>产生"高段位低战力"错位,是运营需平衡的段位公信力问题</li>
+      </ul>
+    </div>
+    <p><strong>数据衔接</strong>:真实实力评估应综合 KD/伤害/撤离率等多维指标,而非单一段位——与 PUBG 的"战斗×生存"分层方法论一致。</p>
+  </section>
+
+  <!-- ⑥ 经济系统 -->
+  <section class="chart-card">
+    <h2>⑥ 经济系统</h2>
+    <p><strong>经济循环</strong>:赚取 → 改装/囤货/收藏 → 投入高战备局 → 高风险高回报。<strong>情绪资产</strong>:大红等稀有物用于收藏,构成"身份/情绪"消费。</p>
+    <div class="action-plan">
+      <div class="plan-title">洞察一:风险偏好动态曲线</div>
+      <p>"装备越好越怕死"——玩家风险偏好随财富变化(穷时敢冲、富时求稳)。<strong>经济系统自发调节玩家行为,比强行平衡更自然</strong>。</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">洞察二:经济溢出 = 真实价值信号</div>
+      <p>玩家将号租出护航赚 RMB,说明游戏内物资已形成现实市场定价,证明经济体系成功;但也是黑产/平衡风险,需风控。</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">动态收益洞察(待验证)</div>
+      <p>玩家体感"高收益后掉落率下降",疑似存在动态收益调节。此为<strong>玩家假设,需产品侧全量数据验证</strong>——体现"从玩家体验反推设计意图"的运营思路。</p>
+    </div>
+  </section>
+
+  <!-- 总结 -->
+  <section class="chart-card">
+    <h2>总结:三角洲的核心运营命题</h2>
+    <div class="action-plan">
+      <div class="plan-title">运营体系全景</div>
+      <ol>
+        <li>玩法循环让"活着撤离"也是胜利 → 扩大可留存玩家</li>
+        <li>行为匹配 + 战备匹配让每类玩家玩到适合的对局 → 降低挫败</li>
+        <li>经济系统(改装/收藏/风险曲线)自发调节玩家行为 → 生态自平衡</li>
+        <li>赛季 + 通行证管理活跃波峰与付费</li>
+        <li>玩家"伪装匹配""护航交易"等行为,揭示运营与玩家的动态博弈 → 需数据持续监测迭代</li>
+      </ol>
+    </div>
+  </section>
+
+</div>
+
+<footer>张君杰 · 数据运营作品集 · 作品三 · 基于真实游戏体验观察</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "ogl": "../js/ogl/index.js"
+  }
+}
+</script>
+<script type="module">
+  import { initMolten } from '../js/molten-init.js';
+  initMolten();
+</script>
+
+</body>
+</html>
