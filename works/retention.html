@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品 · 用户生命周期与留存分析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/system.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav container">
+  <a class="nav-brand" href="../index.html">
+    <span class="nav-brand-mark"></span>
+    张君杰 · 数据运营作品集
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="../index.html">首页</a>
+    <a class="nav-link" href="pubg.html">作品一 · PUBG 分层</a>
+    <a class="nav-link" href="retention.html" aria-current="page">作品二 · 留存分析</a>
+    <a class="nav-link" href="olist.html">作品三 · 电商生命周期</a>
+    <a class="nav-link" href="delta.html">作品四 · 三角洲拆解</a>
+  </div>
+</nav>
+
+<header class="hero molten-hero" data-color1="#5B6BFF" data-color2="#2BE08C" data-color3="#F2F4F8" data-opacity="1.0">
+  <div class="molten-canvas-layer"></div>
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:16px;">核心项目 · 纵向数据</p>
+    <h1>用户生命周期与留存分析</h1>
+    <p class="subtitle">基于真实移动游戏 AB 测试数据,回答"什么影响留存、如何识别流失风险"——可双向解读为玩家/用户生命周期。</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="grid-4" style="margin:var(--space-8) 0;">
+    <div class="stat-tile" data-tone="info">
+      <div class="stat-head"><span class="stat-eyebrow">样本用户</span></div>
+      <div class="stat-value">9万</div>
+      <div class="stat-foot">真实移动游戏用户</div>
+    </div>
+    <div class="stat-tile" data-tone="success">
+      <div class="stat-head"><span class="stat-eyebrow">次日留存 D1</span></div>
+      <div class="stat-value">44.5%</div>
+      <div class="stat-foot">安装次日回访率</div>
+    </div>
+    <div class="stat-tile" data-tone="warning">
+      <div class="stat-head"><span class="stat-eyebrow">7日留存 D7</span></div>
+      <div class="stat-value">18.6%</div>
+      <div class="stat-foot">安装7日后回访率</div>
+    </div>
+    <div class="stat-tile" data-tone="danger">
+      <div class="stat-head"><span class="stat-eyebrow">AB 实验</span></div>
+      <div class="stat-value">2组</div>
+      <div class="stat-foot">gate_30 vs gate_40</div>
+    </div>
+  </div>
+
+  <!-- ① 背景与数据 -->
+  <section class="chart-card">
+    <h2>① 项目背景与数据</h2>
+    <p><strong>业务问题</strong>:留存是运营的核心。本作品回答 3 个问题——整体留存如何?游戏设计改动(关卡门位置)是否影响留存?早期行为能否预示留存?</p>
+    <p><strong>数据源</strong>:Cookie Cats 移动游戏的 <strong>真实 A/B 测试数据</strong>,90,189 名用户。含:</p>
+    <table class="data-table">
+      <tr><th>字段</th><th>含义</th><th>分析价值</th></tr>
+      <tr><td>userid</td><td>用户唯一 ID</td><td>追踪个体</td></tr>
+      <tr><td>version</td><td>gate_30 / gate_40</td><td>AB 组(关卡门位置)</td></tr>
+      <tr><td>sum_gamerounds</td><td>累计游玩局数</td><td>早期行为强度</td></tr>
+      <tr><td>retention_1</td><td>次日是否回访</td><td><strong>D1 留存标签</strong></td></tr>
+      <tr><td>retention_7</td><td>7日是否回访</td><td><strong>D7 留存标签</strong></td></tr>
+    </table>
+    <div class="action-plan"><div class="plan-title">为什么这是关键项目</div>
+      <p>本作品是作品集中<strong>唯一的纵向用户数据</strong>(真实 D1/D7 留存标签),补上其他项目缺失的"生命周期"证据链。</p>
+    </div>
+  </section>
+
+  <!-- ② 整体留存 -->
+  <section class="chart-card">
+    <h2>② 整体留存基准</h2>
+    <p><strong>D1(次日)留存率 44.5%,D7(7日)留存率 18.6%</strong>。D7/D1 = 0.42,即次日回访用户中约 42% 能坚持到第 7 天。</p>
+    <div class="action-plan"><div class="plan-title">运营含义</div>
+      <p>留存曲线快速衰减是休闲游戏常态。运营的核心杠杆在 <strong>"次日回访"能否转化为"长期习惯"</strong>。</p>
+    </div>
+  </section>
+
+  <!-- ③ AB 实验 -->
+  <section class="chart-card">
+    <h2>③ AB 实验:关卡"门"位置如何影响留存</h2>
+    <p>游戏设计了"门"(gate)——玩家玩到一定关卡后被要求等待/付费。本实验测试<strong>第 30 关放门 vs 第 40 关放门</strong>对留存的影响。</p>
+    <img src="../assets/01_ab_retention.png" alt="AB 组留存对比">
+    <table class="data-table">
+      <tr><th>指标</th><th>gate_30(30关放门)</th><th>gate_40(40关放门)</th><th>显著性</th></tr>
+      <tr><td>D1 次日留存</td><td>44.82%</td><td>44.23%</td><td>p=0.076(不显著)</td></tr>
+      <tr><td><strong>D7 7日留存</strong></td><td><strong>19.02%</strong></td><td>18.20%</td><td><strong>p=0.0016(显著)</strong></td></tr>
+    </table>
+    <div class="action-plan"><div class="plan-title">核心发现(反直觉)</div>
+      <ul>
+        <li>gate_30 的 <strong>D7 留存显著高于</strong> gate_40(+0.82pp,p=0.0016)</li>
+        <li><strong>反直觉点</strong>:不是"门放得越晚越好"——在第 30 关早放门,7 日留存反而更高</li>
+        <li><strong>运营判断</strong>:过早让玩家"卡关等待"会伤害体验;但 gate_30 相对 gate_40 更早给玩家"明确目标/节点",反而利于长期留存</li>
+      </ul>
+    </div>
+    <div class="action-plan"><div class="plan-title">严谨声明</div>
+      <p>D7 差异显著但效应量较小(+0.82pp)。结论方向可靠,实际放量前需综合付费、体验等更多指标。</p>
+    </div>
+  </section>
+
+  <!-- ④ 行为与留存 -->
+  <section class="chart-card">
+    <h2>④ 早期行为与留存:找干预杠杆</h2>
+    <p>按用户<strong>累计游玩局数</strong>分层,看留存差异——寻找"哪些早期行为值得运营干预"。</p>
+    <img src="../assets/02_behavior_retention.png" alt="行为与留存关系">
+    <table class="data-table">
+      <tr><th>早期行为(累计局数)</th><th>占比</th><th>D1</th><th>D7</th><th>解读</th></tr>
+      <tr><td>0-1 局(新手)</td><td>10.6%</td><td>2.7%</td><td>0.7%</td><td>流失最快,首日即走</td></tr>
+      <tr><td>2-10 局(探索)</td><td>29.3%</td><td>14.5%</td><td>2.2%</td><td>仍在流失高位</td></tr>
+      <tr><td>11-50 局(活跃)</td><td>34.8%</td><td>52.7%</td><td>11.4%</td><td>开始形成习惯</td></tr>
+      <tr><td>50+ 局(核心)</td><td>25.3%</td><td>85.6%</td><td>55.0%</td><td>高粘性用户</td></tr>
+    </table>
+    <div class="action-plan"><div class="plan-title">关键洞察</div>
+      <ul>
+        <li><strong>"玩够 10 局"是分水岭</strong>:10 局以上用户 D1 留存 52.7%,远高于 10 局以下的 2.7%-14.5%</li>
+        <li><strong>运营杠杆</strong>:帮用户"撑过前 10 局"是关键 —— 新手引导、首局正反馈、任务激励</li>
+        <li><strong>流失风险识别</strong>:累计游玩 ≤10 局的用户是明确的流失风险候选群体(基于行为,非臆测)</li>
+      </ul>
+    </div>
+    <div class="action-plan"><div class="plan-title">严谨声明</div>
+      <p>留存率(如 D7=55%)是<strong>分组后的统计事实</strong>;但"玩得多→留存高"是相关,因果方向需实验验证(可能留存好的用户本来就更爱玩)。</p>
+    </div>
+  </section>
+
+  <!-- ⑤ 运营方案 -->
+  <section class="chart-card">
+    <h2>⑤ 运营落地方案(含实验设计)</h2>
+    <div class="action-plan"><div class="plan-title">策略:优化"前 10 局"体验,提升次留与 7 日留存</div>
+      <ul>
+        <li><strong>目标用户</strong>:累计游玩 ≤10 局、D1 后未回访的新用户(占约 40%,留存最低)</li>
+        <li><strong>核心问题</strong>:这批用户首日体验未形成"继续玩"的动机(留存率仅 2.7%-14.5%)</li>
+        <li><strong>运营动作</strong>:新手引导强化前 10 局的渐进式目标 + 首日任务奖励 + 关卡门位置(采用 gate_30 方案)</li>
+        <li><strong>Primary KPI</strong>:D7 留存率</li>
+        <li><strong>实验设计</strong>:对照组(现版本)vs 实验组(新引导+任务),随机 50/50,观察 7 日</li>
+        <li><strong>决策规则</strong>:若实验组 D7 提升 ≥1pp 且人均局数不下降 → 全量放量;否则回滚/调整</li>
+      </ul>
+    </div>
+    <div class="action-plan"><div class="plan-title">严谨声明</div>
+      <p>以上为<strong>运营方案设计</strong>与<strong>预设实验门槛</strong>,非真实线上实验结果。真实效果需上线后 A/B 验证。</p>
+    </div>
+  </section>
+
+  <!-- ⑥ 双视角解读 -->
+  <section class="chart-card">
+    <h2>⑥ 双视角解读(游戏 / 通用)</h2>
+    <table class="data-table">
+      <tr><th>视角</th><th>项目定位</th><th>核心概念</th></tr>
+      <tr><td><strong>游戏运营</strong></td><td>玩家生命周期与留存</td><td>关卡门设计影响留存 · 游戏局数行为 · AB 测试</td></tr>
+      <tr><td><strong>通用运营</strong></td><td>用户生命周期与留存</td><td>用户分层 · 次日/7日留存 · 行为驱动留存 · 实验验证</td></tr>
+    </table>
+    <p><strong>方法论可迁移</strong>:留存漏斗(D1/D7)、行为分层、AB 实验、流失风险识别——这套框架适用于任何有"用户回访"概念的产品。</p>
+  </section>
+
+</div>
+
+<footer>张君杰 · 数据运营作品集 · 留存分析 · 数据源:Cookie Cats AB 测试</footer>
+
+<script type="importmap">
+{
+  "imports": { "ogl": "../js/ogl/index.js" }
+}
+</script>
+<script type="module">
+  import { initMolten } from '../js/molten-init.js';
+  initMolten();
+</script>
+
+</body>
+</html>
