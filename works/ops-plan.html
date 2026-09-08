@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品 · 三角洲新赛季中段激活运营方案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/system.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav container">
+  <a class="nav-brand" href="../index.html">
+    <span class="nav-brand-mark"></span>
+    张君杰 · 数据运营作品集
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="../index.html">首页</a>
+    <a class="nav-link" href="pubg.html">作品一 · 行为分层</a>
+    <a class="nav-link" href="retention.html">作品二 · 留存分析</a>
+    <a class="nav-link" href="olist.html">作品三 · 生命周期</a>
+    <a class="nav-link" href="ops-plan.html" aria-current="page">作品四 · 运营方案</a>
+    <a class="nav-link" href="delta.html">作品五 · 三角洲</a>
+  </div>
+</nav>
+
+<header class="hero molten-hero" data-color1="#5B6BFF" data-color2="#F5D547" data-color3="#F2F4F8" data-opacity="1.0">
+  <div class="molten-canvas-layer"></div>
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:16px;">作品四 · 运营落地能力</p>
+    <h1>三角洲新赛季中段激活运营方案</h1>
+    <p class="subtitle">针对"赛季初冲完 3×3 安全箱后退场"的真实流失问题,设计差异化的赛季中段激活方案——从用户分层到 KPI、实验、复盘完整闭环。</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="grid-4" style="margin:var(--space-8) 0;">
+    <div class="stat-tile" data-tone="info">
+      <div class="stat-head"><span class="stat-eyebrow">核心问题</span></div>
+      <div class="stat-value">中段流失</div>
+      <div class="stat-foot">冲完 3×3 后退场</div>
+    </div>
+    <div class="stat-tile" data-tone="success">
+      <div class="stat-head"><span class="stat-eyebrow">目标用户</span></div>
+      <div class="stat-value">4类</div>
+      <div class="stat-foot">候鸟/中度/硬核/流失</div>
+    </div>
+    <div class="stat-tile" data-tone="warning">
+      <div class="stat-head"><span class="stat-eyebrow">差异化</span></div>
+      <div class="stat-value">中段</div>
+      <div class="stat-foot">非回归礼,做持续激活</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-head"><span class="stat-eyebrow">验证方式</span></div>
+      <div class="stat-value">A/B</div>
+      <div class="stat-foot">WAU + 留存 + 决策规则</div>
+    </div>
+  </div>
+
+  <!-- ① 背景与问题 -->
+  <section class="chart-card">
+    <h2>① 业务背景与问题定义</h2>
+    <p><strong>数据观察</strong>(基于公开信息 + 玩家生态):</p>
+    <ul>
+      <li>三角洲"烽火地带/摸金模式"是主流玩法,人数远大于全面战场</li>
+      <li><strong>3×3 安全箱 = 赛季任务核心追求</strong>,官方故意不开放购买,以维持赛季初活跃</li>
+      <li>真实现象:<strong>"候鸟玩家"</strong>——平时不上线,赛季初全勤做 3×3(约 3-4 天),做完后流失</li>
+      <li>S10 真实反馈:玩家完成赛季任务后"没事干",赛季中后段 DAU 下滑</li>
+    </ul>
+    <div class="action-plan">
+      <div class="plan-title">核心业务问题</div>
+      <p>赛季初 DAU 波峰明显,但<strong>完成 3×3 安全箱任务后玩家快速流失</strong>,赛季中后段 DAU/留存下滑。</p>
+    </div>
+    <div class="action-plan">
+      <div class="plan-title">运营机会(差异化定位)</div>
+      <p>官方现有回归活动(回声/裂变)只解决"赛季初拉回流",<strong>未解决"做完任务的中段流失"</strong>。本方案瞄准官方覆盖不到的空白。</p>
+    </div>
+  </section>
+
+  <!-- ② 用户分层 -->
+  <section class="chart-card">
+    <h2>② 目标用户分层</h2>
+    <table class="data-table">
+      <tr><th>用户层</th><th>特征</th><th>赛季行为</th><th>运营目标</th></tr>
+      <tr><td>候鸟玩家(核心问题)</td><td>平时不上,赛季初全勤</td><td>做完 3×3 后退场</td><td>留住到中后段</td></tr>
+      <tr><td>中度玩家</td><td>每周玩几天</td><td>打任务 + 摸金</td><td>提升登录频次</td></tr>
+      <tr><td>硬核玩家</td><td>高频</td><td>持续摸金/冲段</td><td>保持,作消耗端</td></tr>
+      <tr><td>已流失玩家(&gt;30天)</td><td>已退场</td><td>不上线</td><td>拉回体验新内容</td></tr>
+    </table>
+    <p><strong>方案重点</strong>:候鸟 + 中度玩家(占流失主因),硬核作生态支撑,流失玩家辅助拉回。</p>
+  </section>
+
+  <!-- ③ 活动设计 -->
+  <section class="chart-card">
+    <h2>③ 活动设计:赛季中段"藏宝图"激活计划</h2>
+    <p><strong>核心机制</strong>:赛季中段(第 3-6 周)开启"赛季宝藏"追踪任务——给完成 3×3 的玩家<strong>持续的新目标</strong>,而非赛季初一次性冲刺。</p>
+    <div class="action-plan">
+      <div class="plan-title">为什么是"藏宝图/追踪"</div>
+      <p>承接三角洲"摸金"心智——不是"做任务领奖励"的打卡,而是"有目标地重返战场摸金",自然承接玩家已有习惯。</p>
+    </div>
+    <table class="data-table">
+      <tr><th>要素</th><th>设计</th></tr>
+      <tr><td>活动名</td><td>赛季宝藏 · 藏宝图追踪</td></tr>
+      <tr><td>目标用户</td><td>完成 3×3 的候鸟玩家 + 中度玩家</td></tr>
+      <tr><td>周期</td><td>赛季第 3-6 周(任务做完的"真空期")</td></tr>
+      <tr><td>核心机制</td><td>每周解锁一张藏宝图,指向特定地图/玩法,完成目标获"藏宝线索"</td></tr>
+      <tr><td>奖励</td><td>收藏品(炫彩安全箱外观/挂件)+ 限定枪皮 + 图灵砖</td></tr>
+      <tr><td>社交</td><td>组队线索共享,好友组队额外进度</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">与官方回归礼的差异</div>
+      <ul>
+        <li>官方回归礼:拉 30 天未登录玩家回游 → 一次性</li>
+        <li><strong>本方案:持续激活已在线但将流失的玩家</strong> → 周更节奏,拉长赛季寿命</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ④ 触达 -->
+  <section class="chart-card">
+    <h2>④ 触达渠道</h2>
+    <ul>
+      <li>站内:登录弹窗、活动页、任务追踪 UI(藏宝图入口)</li>
+      <li>游戏内:撤离结算页露出"下一张藏宝图"</li>
+      <li>社区:抖音/B站/官方社区发布"本周藏宝图"内容</li>
+      <li>社交:好友组队进度(拉动回归)</li>
+    </ul>
+  </section>
+
+  <!-- ⑤ KPI与成本 -->
+  <section class="chart-card">
+    <h2>⑤ KPI 与成本</h2>
+    <div class="action-plan"><div class="plan-title">Primary KPI</div>
+      <ul>
+        <li>活动期 <strong>WAU 环比提升</strong>(核心:证明激活了中段)</li>
+        <li><strong>候鸟玩家(赛季初活跃)活动期留存</strong></li>
+      </ul>
+    </div>
+    <div class="action-plan"><div class="plan-title">Secondary KPI</div>
+      <ul><li>日均对局数(摸金局)· 藏宝图完成率 · 好友组队率</li></ul>
+    </div>
+    <div class="action-plan"><div class="plan-title">成本</div>
+      <p>奖励以游戏内资源为主(收藏品/枪皮/图灵砖,边际成本低)+ 内容制作(每周藏宝图点位)。</p>
+    </div>
+  </section>
+
+  <!-- ⑥ 风险与实验 -->
+  <section class="chart-card">
+    <h2>⑥ 风险与实验设计</h2>
+    <table class="data-table">
+      <tr><th>风险</th><th>缓解</th></tr>
+      <tr><td>老玩家套利(小号刷藏宝图)</td><td>奖励绑定账号赛季完成度</td></tr>
+      <tr><td>奖励过度影响经济</td><td>收藏品不含战斗数值加成</td></tr>
+      <tr><td>内容消耗快</td><td>藏宝图点位每周轮换 + 绑定真实地图/玩法</td></tr>
+    </table>
+    <div class="action-plan">
+      <div class="plan-title">A/B Test 设计</div>
+      <ul>
+        <li>实验组:开放藏宝图 + 组队加速</li>
+        <li>对照组:仅普通赛季任务</li>
+        <li>观察 2 周:WAU 变化、候鸟留存、人均局数</li>
+        <li><strong>决策规则</strong>:实验组 WAU 提升 ≥5% 且人均局数不降 → 全量;否则调整奖励/节奏</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑦ 复盘 -->
+  <section class="chart-card">
+    <h2>⑦ 复盘框架</h2>
+    <ul>
+      <li>活动前中后 WAU/DAU 曲线对比</li>
+      <li>候鸟玩家(3×3 完成者)活动前后留存漏斗</li>
+      <li>各藏宝图点位完成率(优化点位设计)</li>
+      <li>成本 ROI(图灵砖消耗 vs 活跃提升)</li>
+      <li>结论:验证"赛季中段持续内容"能否对冲"冲完即走"</li>
+    </ul>
+  </section>
+
+  <!-- 声明 -->
+  <section class="chart-card">
+    <h2>严谨声明</h2>
+    <div class="action-plan">
+      <p>本方案基于公开信息与玩家生态观察设计,为<strong>运营方案假设</strong>。真实效果需上线 A/B 验证,不伪装为已运行结果。</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>张君杰 · 数据运营作品集 · 运营方案 · 基于三角洲真实机制</footer>
+
+<script type="importmap">
+{
+  "imports": { "ogl": "../js/ogl/index.js" }
+}
+</script>
+<script type="module">
+  import { initMolten } from '../js/molten-init.js';
+  initMolten();
+</script>
+
+</body>
+</html>
